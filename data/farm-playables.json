@@ -1,0 +1,22 @@
+[
+    {
+        "title": "farm_playable_001",
+        "playUrl": "playables/west/west_playable_013.html",
+        "screenshot": "playables/west/screens/west_playable_013.png"
+    },
+    {
+        "title": "farm_playable_002",
+        "playUrl": "playables/west/west_playable_012.html",
+        "screenshot": "playables/west/screens/west_playable_012.png"
+    },
+    {
+        "title": "v_playable_003",
+        "playUrl": "playables/west/west_playable_011.html",
+        "screenshot": "playables/west/screens/west_playable_011.png"
+    },
+    {
+        "title": "farm_playable_004",
+        "playUrl": "playables/west/west_playable_010.html",
+        "screenshot": "playables/west/screens/west_playable_010.png"
+    }
+]

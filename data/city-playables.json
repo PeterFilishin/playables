@@ -1,0 +1,32 @@
+[
+    {
+        "title": "city_playable_001",
+        "playUrl": "playables/mega/mega_playable_016.html", 
+        "screenshot": "playables/mega/screens/mega_playable_016.png"
+    },
+    {
+        "title": "city_playable_002",
+        "playUrl": "playables/mega/mega_playable_015.html", 
+        "screenshot": "playables/mega/screens/mega_playable_015.png"
+    },
+    {
+        "title": "city_playable_003",
+        "playUrl": "playables/mega/mega_playable_014.html", 
+        "screenshot": "playables/mega/screens/mega_playable_014.png"
+    },
+    {
+        "title": "city_playable_004",
+        "playUrl": "playables/mega/mega_playable_012.html", 
+        "screenshot": "playables/mega/screens/mega_playable_012.png"
+    },
+    {
+        "title": "city_playable_005",
+        "playUrl": "playables/mega/mega_playable_011.html", 
+        "screenshot": "playables/mega/screens/mega_playable_011.png"
+    },
+    {
+        "title": "city_playable_006", 
+        "playUrl": "playables/mega/mega_playable_010.html",
+        "screenshot": "playables/mega/screens/mega_playable_010.png"
+    }
+]

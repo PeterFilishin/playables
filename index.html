@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playables Dashboard</title>
+    <title>Playables Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -28,7 +28,6 @@
         .header {
             text-align: center;
             margin-bottom: 3rem;
-            position: relative;
         }
 
         .header h1 {
@@ -42,26 +41,29 @@
         .header p {
             color: rgba(255,255,255,0.9);
             font-size: 1.1rem;
+            margin-bottom: 0.5rem;
         }
 
-        .admin-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background: #0061f2;
-            color: white;
-            border: none;
+        .tech-stack {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        .notice {
+            background: rgba(255, 152, 0, 0.1);
+            border: 1px solid rgba(255, 152, 0, 0.3);
             border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
+            padding: 1rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            color: #ffb74d;
+            font-size: 0.9rem;
+            text-align: left;
         }
 
-        .admin-button:hover {
-            background: #0052d1;
-            transform: translateY(-1px);
+        .notice strong {
+            color: #ffa726;
         }
 
         .section {
@@ -71,20 +73,11 @@
         .section-header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
             margin-bottom: 1.5rem;
             background: #2c2e30;
-            border-radius: 12px;
-            padding: 1.5rem;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
             border: 1px solid #404244;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            user-select: none;
-        }
-
-        .section-header:hover {
-            background: #33353a;
-            border-color: #525456;
         }
 
         .section-title {
@@ -96,74 +89,13 @@
             gap: 0.5rem;
         }
 
-        .section-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        .west-icon {
-            background-image: url('logo/west.png');
-        }
-
-        .mega-icon {
-            background-image: url('logo/mega.png');
-        }
-
-        .section-header-right {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .section-count {
-            background: #404244;
-            color: #e8e9ea;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 500;
-        }
-
-        .collapse-toggle {
-            background: none;
-            border: none;
-            color: #e8e9ea;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-        }
-
-        .collapse-toggle:hover {
-            background: #404244;
-        }
-
-        .collapse-toggle.collapsed {
-            transform: rotate(180deg);
+        .section-emoji {
+            font-size: 2.5rem;
+            margin-right: 0.5rem;
         }
 
         .section-content {
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .section-content.collapsed {
-            max-height: 0;
-            margin-bottom: 0;
+            margin-bottom: 1rem;
         }
 
         .playables-grid {
@@ -199,11 +131,11 @@
             background: var(--accent-color, #667eea);
         }
 
-        .west-card::before {
-            background: #ff5722;
+        .farm-card::before {
+            background: #4caf50;
         }
 
-        .mega-card::before {
+        .city-card::before {
             background: #0061f2;
         }
 
@@ -270,189 +202,9 @@
             transform: translateY(-1px);
         }
 
-        .btn-asana {
-            background: #2c2e30;
-            color: #e8e9ea;
-            border: 1px solid #404244;
-        }
-
-        .btn-asana:hover {
-            background: #404244;
-            border-color: #525456;
-            transform: translateY(-1px);
-        }
-
-        /* Modal styles */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.8);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .modal {
-            background: #2c2e30;
-            border-radius: 12px;
-            padding: 2rem;
-            width: 90%;
-            max-width: 500px;
-            border: 1px solid #404244;
-            position: relative;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-
-        .modal-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: white;
-        }
-
-        .close-button {
-            background: none;
-            border: none;
-            color: #e8e9ea;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .close-button:hover {
-            background: #404244;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            color: #e8e9ea;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .form-input,
-        .form-select {
-            width: 100%;
-            padding: 0.75rem;
-            background: #1d1f21;
-            border: 1px solid #404244;
-            border-radius: 8px;
-            color: #e8e9ea;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-        }
-
-        .form-input:focus,
-        .form-select:focus {
-            outline: none;
-            border-color: #0061f2;
-            box-shadow: 0 0 0 3px rgba(0, 97, 242, 0.1);
-        }
-
-        .file-input {
-            display: none;
-        }
-
-        .file-label {
-            display: inline-block;
-            padding: 0.75rem 1rem;
-            background: #404244;
-            border: 1px solid #525456;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: #e8e9ea;
-            text-align: center;
-            width: 100%;
-        }
-
-        .file-label:hover {
-            background: #525456;
-        }
-
-        .preview-container {
-            display: none;
-            margin-top: 1rem;
-        }
-
-        .preview-image {
-            width: 100%;
-            max-width: 200px;
-            border-radius: 8px;
-            border: 1px solid #404244;
-        }
-
-        .form-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .btn-primary {
-            background: #0061f2;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            flex: 1;
-        }
-
-        .btn-primary:hover {
-            background: #0052d1;
-        }
-
-        .btn-secondary {
-            background: #404244;
-            color: #e8e9ea;
-            border: 1px solid #525456;
-            border-radius: 8px;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            flex: 1;
-        }
-
-        .btn-secondary:hover {
-            background: #525456;
-        }
-
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
-            }
-
-            .header {
-                position: static;
-            }
-
-            .admin-button {
-                position: static;
-                margin-top: 1rem;
             }
 
             .header h1 {
@@ -472,10 +224,6 @@
             .playables-grid {
                 grid-template-columns: 1fr;
             }
-
-            .modal {
-                margin: 1rem;
-            }
         }
     </style>
 </head>
@@ -483,101 +231,46 @@
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>📱 Playables Dashboard</h1>
-            <p>Тестирование и история разработки плейблов</p>
-            <button class="admin-button" onclick="openModal()">+ Добавить плейбл</button>
+            <h1>🎮 My Playable Ads</h1>
+            <p>Interactive HTML5 playable advertisements portfolio</p>
+            <p class="tech-stack">Built with Cocos Creator & Claude AI</p>
+            
+            <div class="notice">
+                <strong>⚠️ Note:</strong> Playables may not work properly when opened in embedded browsers (like social media apps). For best results, please open links directly in your web browser (Chrome, Safari, Firefox, etc.).
+            </div>
         </header>
 
-        <!-- West Section -->
+        <!-- Farm Section -->
         <section class="section">
-            <div class="section-header" onclick="toggleSection('west')">
+            <div class="section-header">
                 <div class="section-title">
-                    <div class="section-icon west-icon"></div>
-                    West Playables
-                </div>
-                <div class="section-header-right">
-                    <div class="section-count" id="west-count">1 плейбл</div>
-                    <button class="collapse-toggle collapsed" id="west-toggle">▶</button>
+                    <span class="section-emoji">🌾</span>
+                    Farm Games
                 </div>
             </div>
             
-            <div class="section-content collapsed" id="west-content">
-                <div class="playables-grid" id="west-playables">
-                    <!-- West playables will be inserted here -->
+            <div class="section-content" id="farm-content">
+                <div class="playables-grid" id="farm-playables">
+                    <!-- Farm playables will be inserted here -->
                 </div>
             </div>
         </section>
 
-        <!-- Mega Section -->
+        <!-- City Builder Section -->
         <section class="section">
-            <div class="section-header" onclick="toggleSection('mega')">
+            <div class="section-header">
                 <div class="section-title">
-                    <div class="section-icon mega-icon"></div>
-                    Mega Playables
-                </div>
-                <div class="section-header-right">
-                    <div class="section-count" id="mega-count">2 плейбла</div>
-                    <button class="collapse-toggle collapsed" id="mega-toggle">▶</button>
+                    <span class="section-emoji">🏙️</span>
+                    City Builder Games
                 </div>
             </div>
             
-            <div class="section-content collapsed" id="mega-content">
-                <div class="playables-grid" id="mega-playables">
-                    <!-- Mega playables will be inserted here -->
+            <div class="section-content" id="city-content">
+                <div class="playables-grid" id="city-playables">
+                    <!-- City playables will be inserted here -->
                 </div>
             </div>
         </section>
-    </div>
-
-    <!-- Modal -->
-    <div class="modal-overlay" id="modal">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 class="modal-title">Добавить новый плейбл</h2>
-                <button class="close-button" onclick="closeModal()">×</button>
-            </div>
-
-            <form id="playableForm">
-                <div class="form-group">
-                    <label class="form-label">Тип плейбла</label>
-                    <select class="form-select" id="playableType" required>
-                        <option value="">Выберите тип</option>
-                        <option value="west">West</option>
-                        <option value="mega">Mega</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Название плейбла</label>
-                    <input type="text" class="form-input" id="playableTitle" placeholder="Например: west_playable_011" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">HTML файл плейбла</label>
-                    <input type="file" class="file-input" id="playableFile" accept=".html" required>
-                    <label for="playableFile" class="file-label">Выберите HTML файл</label>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Скриншот (360x480)</label>
-                    <input type="file" class="file-input" id="screenshotFile" accept="image/*" required>
-                    <label for="screenshotFile" class="file-label">Выберите скриншот</label>
-                    <div class="preview-container" id="screenshotPreview">
-                        <img class="preview-image" id="previewImage" alt="Preview">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-label">Ссылка на Asana</label>
-                    <input type="url" class="form-input" id="asanaUrl" placeholder="https://app.asana.com/..." required>
-                </div>
-
-                <div class="form-buttons">
-                    <button type="button" class="btn-secondary" onclick="closeModal()">Отмена</button>
-                    <button type="submit" class="btn-primary">Добавить плейбл</button>
-                </div>
-            </form>
-        </div>
     </div>
 
     <script src="js/dashboard.js"></script>
