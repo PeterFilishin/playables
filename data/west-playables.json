@@ -1,0 +1,62 @@
+[
+    {
+        "title": "west_playable_013",
+        "playUrl": "playables/west/west_playable_013.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/311115508214474/task/1211738976632897?focus=true",
+        "screenshot": "playables/west/screens/west_playable_013.png"
+    },
+    {
+        "title": "west_playable_012",
+        "playUrl": "playables/west/west_playable_012.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/311115508214474/task/1211405893342861?focus=true",
+        "screenshot": "playables/west/screens/west_playable_012.png"
+    },
+    {
+        "title": "west_playable_011",
+        "playUrl": "playables/west/west_playable_011.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/311115508214474/task/1210819668634454?focus=true",
+        "screenshot": "playables/west/screens/west_playable_011.png"
+    },
+    {
+        "title": "west_playable_010",
+        "playUrl": "playables/west/west_playable_010.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/311115508214474/task/1210169599112285?focus=true",
+        "screenshot": "playables/west/screens/west_playable_010.png"
+    },
+    {
+        "title": "west_playable_009",
+        "playUrl": "playables/west/west_playable_009.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/957140386061758/task/1209455673879929?focus=true",
+        "screenshot": "playables/west/screens/west_playable_009.png"
+    },
+    {
+        "title": "west_playable_008",
+        "playUrl": "playables/west/west_playable_008.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/957140386061758/task/1209289327962870?focus=true",
+        "screenshot": "playables/west/screens/west_playable_008.png"
+    },
+    {
+        "title": "west_playable_007",
+        "playUrl": "playables/west/west_playable_007.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/957140386061758/task/1202667952793707?focus=true",
+        "screenshot": "playables/west/screens/west_playable_007.png"
+    },
+    {
+        "title": "west_playable_006",
+        "playUrl": "playables/west/west_playable_006.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/957140386061758/task/1201723469763125?focus=true",
+        "screenshot": "playables/west/screens/west_playable_006.png"
+    },
+    {
+        "title": "west_playable_005",
+        "playUrl": "playables/west/west_playable_005.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/957140386061758/task/1113051978713496?focus=true",
+        "screenshot": "playables/west/screens/west_playable_005.png"
+    },
+    {
+        "title": "west_playable_004",
+        "playUrl": "playables/west/west_playable_004.html",
+        "asanaUrl": "https://app.asana.com/1/81858279340969/project/957140386061758/task/954309120152762?focus=true",
+        "screenshot": "playables/west/screens/west_playable_004.png"
+    }
+]
